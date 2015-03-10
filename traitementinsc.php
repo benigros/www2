@@ -6,20 +6,38 @@ include("identifiants.php");
 <meta charset="UTF-8">
 <title></title>
 </head>
-<body>
-<p> votre adresse et votre mot de passe sont :
+
+
 <?php
 
-echo $_POST['adresse'];
-echo $_POST['mdp'];
+$verifmail = "SELECT * FROM Logs WHERE adresse = '".$_POST['adresse']."'";
 
-$marequete = "INSERT  INTO Logs VALUES ( '".$_POST['adresse']."','".$_POST['mdp']."','".$_POST['Nom']."','".$_POST['Prenom']."')  ";
-echo $marequete."yugtuyruier";
-$result=mysql_query($marequete);
-echo $result;
+$resverif = mysql_query($verifmail);
+$nbresverif=mysql_num_rows($resverif);
+
+echo $nbresverif;
+echo var_dump($_POST);
+
+
+
+
+if( $nbresverif != 0)
+{
+	header('Location : inscription.php');
+}
+else{
+	if (  $_POST['mdp'] == $_POST['confmdp'])
+		{
+			$marequete = "INSERT  INTO Logs VALUES ( '".$_POST['adresse']."','".$_POST['mdp']."','".$_POST['Nom']."','".$_POST['Prenom']."')  ";
+
+			$result=mysql_query($marequete);
+
+			header('Location : Connexion.php');
+		}
+	else{ header('Location : inscription.php'); }
+	}
 mysql_close($link);
 
 ?>
-< <a href="Inscription.php">clique ici</a> pour revenir à la page inscription.</p>
-</body>
+
 </html>

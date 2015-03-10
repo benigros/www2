@@ -18,25 +18,40 @@ include("identifiants.php");
 $adresse= $_POST['adresse'];
 
 $req1 = "SELECT * FROM logs WHERE adresse = '".$_POST['adresse']."'";
-$res1 = mysql_query('$req1');
+$res1 = mysql_query($req1);
+$nbres1=mysql_num_rows($res1);
 
-if ( mysql_num_rows('$res1') != NULL)
+if ($nbres1 != 0)
 {
 	$req2 = "SELECT * FROM logs WHERE adresse = '".$_POST['adresse']."' AND mdp = '".$_POST['mdp']."'";
-	$res2 = mysql_num_rows('$req2');
+	$res2 = mysql_query($req2);
+	$nbres2=mysql_num_rows($res2);
 	
-	if ( mysql_num_rows('$res2') != NULL)
+	
+	if ( $nbres2 != 0)
 	{
-		echo ' Connexion réussie ';
+		
+		
+		$_SESSION["adresse"]=$_POST['adresse'];
+		$req3 = "SELECT id FROM logs WHERE adresse = '".$_POST['adresse']."' AND mdp = '".$_POST['mdp']."'";
+		$res3=mysql_query($req3);
+		$iduser=mysql_result($res3,0,'id');
+		$_SESSION['id']=$iduser;
+		
+		
+		
+		$_SESSION['prenom']=$_POST['prenom'];
+		
+		 
+		header( 'Location: RechercheEvent.php');
 		
 	}
 	else{
-		echo 'mot de passe erroné';
+		header( 'Location: Connexion.php');
+		
 	}
 }
-else {
-	echo 'Cet identifiant est déjà pris';
-}
+
 
 
 
