@@ -15,39 +15,47 @@ include("identifiants.php");
 
 <?php 
 
-$adresse= $_POST['adresse'];
+echo "2";
 
-$req1 = "SELECT * FROM logs WHERE adresse = '".$_POST['adresse']."'";
+$req1 = "SELECT * FROM Utilisateur WHERE AdresseMail_Utilisateur = '".$_POST['AdresseMail_Utilisateur']."'";
 $res1 = mysql_query($req1);
 $nbres1=mysql_num_rows($res1);
 
 if ($nbres1 != 0)
 {
-	$req2 = "SELECT * FROM logs WHERE adresse = '".$_POST['adresse']."' AND mdp = '".$_POST['mdp']."'";
+	echo "1";
+	$req2 = "SELECT * FROM Utilisateur WHERE AdresseMail_Utilisateur = '".$_POST['AdresseMail_Utilisateur']."' AND Mdp = '".$_POST['Mdp']."'";
 	$res2 = mysql_query($req2);
 	$nbres2=mysql_num_rows($res2);
+	
+	echo $nbres2;
 	
 	
 	if ( $nbres2 != 0)
 	{
+		echo "123";
+		
+		$_SESSION["AdresseMail_Utilisateur"]=$_POST['AdresseMail_Utilisateur'];
 		
 		
-		$_SESSION["adresse"]=$_POST['adresse'];
-		$req3 = "SELECT id FROM logs WHERE adresse = '".$_POST['adresse']."' AND mdp = '".$_POST['mdp']."'";
+		$req3= "SELECT Prenom_Utilisateur FROM Utilisateur WHERE AdresseMail_Utilisateur = '".$_POST['AdresseMail_Utilisateur']."'";
 		$res3=mysql_query($req3);
-		$iduser=mysql_result($res3,0,'id');
-		$_SESSION['id']=$iduser;
+		$prenom=mysql_result($res3,0,'Prenom_Utilisateur');
 		
+		$_SESSION['Prenom_Utilisateur']=$prenom;
 		
-		
-		$_SESSION['prenom']=$_POST['prenom'];
+		$req4= "SELECT Nom_Utilisateur FROM Utilisateur WHERE AdresseMail_Utilisateur = '".$_POST['AdresseMail_Utilisateur']."'";
+		$res4=mysql_query($req4);
+		$nom=mysql_result($res4,0,'Nom_Utilisateur');
+		$_SESSION['Nom_Utilisateur']=$nom;
 		
 		 
-		header( 'Location: RechercheEvent.php');
+		header( 'Location:RechercheEvent.php');
 		
 	}
 	else{
-		header( 'Location: Connexion.php');
+		header( 'Location:Connexion.php');
+		
 		
 	}
 }

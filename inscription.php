@@ -17,19 +17,37 @@ include("head.php");
     <fieldset>
         <legend>Informations de base        </legend>
 
-        
-    <label for="Prenom">Prénom</label> : <input type="text" name="Prenom" id="Prenom" value="Benoit" required/><br/><br/>
-    <label for="Nom">Nom</label> : <input type="text" name="Nom" id="Nom" value="Devilliers" required/><br/><br/>
-    <label for="newmdp">Date de naissance</label> : <input type="date" name="date" id="date" value="1994-01-25" required/><br/><br/>
+    <label for="Nom_Utilisateur">Nom</label> : <input type="text" name="Nom_Utilisateur" id="Nom_Utilisateur" value="Moscet" required/><br/><br/>  
+    <label for="Prenom_Utilisateur">Prénom</label> : <input type="text" name="Prenom_Utilisateur" id="Prenom_Utilisateur" value="Carl" required/><br/><br/>
+	
+	
+	<label for="Sexe">Sexe :</label>
+	<select name="Sexe">
+
+	
+		<option value="H">Homme</option>
+
+    <option value="F">Femme</option>
+	</select>
+	<br/>
+	<br/>
     
+    <label for="Date_de_Naissance">Date de naissance</label> : <input type="date" name="Date_de_Naissance" id="Date_de_Naissance" value="1994-01-25" required/><br/><br/>
+    <label for="Adresse_Utilisateur">Adresse </label> : <input type="text" name="Adresse_Utilisateur" id="Adresse_Utilisateur" value="sur le trotoir" required/><br/><br/>
+	<label for="CodePostal_Utilisateur">Code postal</label> : <input type="text" name="CodePostal_Utilisateur" id="CodePostal_Utilisateur" value="29200" required/><br/><br/>  
+	<label for="Ville_Utilisateur">Ville</label> : <input type="text" name="Ville_Utilisateur" id="Ville_Utilisateur" value="Brest" required/><br/><br/> 
+
+	
         </fieldset>
 
     <fieldset>
         <legend>Informations complémentaires       </legend>
-    <label for="adresse">Adresse électronique</label> : <input type="email" name="adresse" id="adresse" value="toto@xxx.fr" required/><br/><br/>
+		
+		
+    <label for="AdresseMail_Utilisateur">Adresse électronique</label> : <input type="email" name="AdresseMail_Utilisateur" id="AdresseMail_Utilisateur" value="coco@xxx.fr" required/><br/><br/>
     
-    <label for="mdp">Nouveau mot de passe</label> : <input type="password" name="mdp" id="mdp" value="mdp" required/><br/><br/>
-    <label for="newmdp">Confirmer le mot de passe</label> : <input type="password" name="confmdp" id="confmdp" value="mdp" required/><br/><br/>
+    <label for="Mdp">Nouveau mot de passe</label> : <input type="password" name="Mdp" id="Mdp" value="tralala" required/><br/><br/>
+    <label for="newmdp">Confirmer le mot de passe</label> : <input type="password" name="confmdp" id="confmdp" value="tralala" required/><br/><br/>
     
     </fieldset>
     <input type="submit" value="Inscription" />

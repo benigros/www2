@@ -17,9 +17,9 @@ include("head.php");
 <h1>Connexion</h1>
 <form method="post" action="traitementco.php" onsubmit="window.open('popup.php','popup','width=700,height=400,left=200,top=200,scrollbars=1')">
 <fieldset>
-<label for="prenom">Prénom</label> : <input type="text" name="prenom" id="prenom" value="Carl" required/><br/><br/>
-<label for="adresse">Identifiant(adresse électronique)</label> : <input type="email" name="adresse" value="carlito@ensc.fr" id="adresse" required/><br/><br/>
-<label for="mdp">Mot de passe</label> : <input type="password" name="mdp" id="mdp" value="tralala" required/><br/><br/>
+
+<label for="AdresseMail_Utilisateur">Identifiant(adresse électronique)</label> : <input type="email" name="AdresseMail_Utilisateur" value="coco@xxx.fr" id="adresse" required/><br/><br/>
+<label for="mdp">Mot de passe</label> : <input type="password" name="Mdp" id="Mdp" value="tralala" required/><br/><br/>
 </fieldset>
 <input type="submit" value="Connexion" />
 </form>

@@ -16,9 +16,14 @@ include("head.php");
         
           <fieldset>
           <label for="TypeEvent">Type d'évènement :</label>
-    <select name="TypeEvent">
+	
+	
+	<form method="post" action="traitementcreerevent.php">
+	
+		<select name="TypeEvent">
 
-    <option value="Anniversaire">Anniversaire</option>
+	
+		<option value="Anniversaire">Anniversaire</option>
 
     <option value="Cocktail">Cocktail</option>
 
@@ -49,11 +54,11 @@ include("head.php");
               </fieldset>
           
     <input type="submit" value="Lancer la recherche" />
+	</form>
 	</div>
+	
 
-        <?php
-      
-        ?>
+        
     </body>
 	
 	<?php include("foot.php") ;?>

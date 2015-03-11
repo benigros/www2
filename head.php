@@ -10,12 +10,17 @@ session_start();
     <body>
              <div class="row">
 				<div class="col-lg-6" ></div>
+				<?php
+
+
+ ?>
 	
 	<?php
-	if(isset($_SESSION['id']))
+	
+	if(isset($_SESSION['AdresseMail_Utilisateur']))
 	{?><?php session_destroy();?>
 <div class="col-lg-2" >
-      Connecté en tant que <?php  echo $_SESSION['prenom'] ;?>
+      Connecté en tant que <?php  echo $_SESSION['Prenom_Utilisateur']." ".$_SESSION['Nom_Utilisateur'] ;?>
 	  </div>
 	  <div class="col-lg-2" >
 <a href="http://localhost/Connexion.php">Déconnexion</a>

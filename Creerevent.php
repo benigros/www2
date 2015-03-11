@@ -11,20 +11,21 @@ include("head.php");
 <div class="row">
 	<div class="col-lg-3"></div>
 	<div class="col-lg-8">
+	
         <h1> Création d'évènement</h1>
         
-        <form method='post' action=''>
+        <form method='post' action='traitementcreerevent.php'>
         
         <fieldset>
-        <label for="datevent">Date </label> : <input type="date" name="datevent" id="date" value="" required/><br/><br/>
-        
-    <label for="NomEvent">Nom</label> : <input type="text" name="NomEvent" id="NomEvent" placeholder="Apéro à la colloc'" required/><br/><br/>
-    
-    
-    <label for="TypeEvent">Type d'évènement :</label>
-    <select name="TypeEvent">
+		
+	 <label for="NomEvent">Nom</label> : <input type="text" name="Nom_Evenement" id="Nom_Evenement" placeholder="Apéro à la colloc'" required/><br/><br/>
+  
+		
+	<label for="Categorie_Evenement">Type d'évènement :</label>
+	<select name="Categorie_Evenement">
 
-    <option value="Anniversaire">Anniversaire</option>
+	
+		<option value="Anniversaire">Anniversaire</option>
 
     <option value="Cocktail">Cocktail</option>
 
@@ -47,7 +48,22 @@ include("head.php");
             <option value="fete">Fête</option>
     
     
-    </select>
+    </select> <br/><br/>
+	
+	
+       <label for="datevent">Date </label> : <input type="date" name="Date_Evenement" id="Date_Evenement" value="" required/><br/><br/>
+        <br/>
+		<br/>
+		<label for="Description_Evenement">Description Evenement</label>:<textarea name="Description_Evenement" id="Description_Evenement" rows="10" cols="10">
+		
+      
+
+       </textarea>      
+   
+
+   
+    
+    
             </fieldset>
 
 
