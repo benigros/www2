@@ -13,12 +13,17 @@ include("head.php");
 	<div class="col-lg-3"></div>
 	<div class="col-lg-8">
         <h1> Recherche d'évènement</h1>
-        
+       
+<form method="post" action="traitementRecherchevent.php">
+	   
           <fieldset>
+		  
+		  
+		  <label for="Nom_Evenement">Nom de l'évènement</label>: <input type="text" name="Nom_Evenement" id="Nom_Evenement" value="" /><br/><br/> 
           <label for="TypeEvent">Type d'évènement :</label>
 	
 	
-	<form method="post" action="traitementcreerevent.php">
+	
 	
 		<select name="TypeEvent">
 
