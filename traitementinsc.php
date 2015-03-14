@@ -30,14 +30,14 @@ header('Location:Connexion.php');
 
 
  else{
-	 if (  $_POST['Mdp'] == $_POST['confmdp'])
+	 if (  $_POST['Motdepasse'] == $_POST['confmdp'])
 		 {
 			
 			
-			 $marequete = "INSERT  INTO Utilisateur (Nom_Utilisateur,Prenom_Utilisateur,Sexe,Date_de_Naissance,AdresseMail_Utilisateur,Adresse_Utilisateur,CodePostal_Utilisateur,Ville_Utilisateur,Mdp) 
+			 $marequete = "INSERT  INTO Utilisateur (Nom_Utilisateur,Prenom_Utilisateur,Sexe,Date_de_Naissance,AdresseMail_Utilisateur,Adresse_Utilisateur,CodePostal_Utilisateur,Ville_Utilisateur,Motdepasse) 
 			 VALUES ( '".$_POST['Nom_Utilisateur']."','".$_POST['Prenom_Utilisateur']."','".$_POST['Sexe']."','".$_POST['Date_de_Naissance']."',
 			 '".$_POST['AdresseMail_Utilisateur']."',
-			 '".$_POST['Adresse_Utilisateur']."','".$_POST['CodePostal_Utilisateur']."','".$_POST['Ville_Utilisateur']."','".$_POST['Mdp']."')  ";
+			 '".$_POST['Adresse_Utilisateur']."','".$_POST['CodePostal_Utilisateur']."','".$_POST['Ville_Utilisateur']."','".$_POST['Motdepasse']."')  ";
 			 
 			 echo $marequete;
 			

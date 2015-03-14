@@ -46,7 +46,7 @@ include("head.php");
 		
     <label for="AdresseMail_Utilisateur">Adresse électronique</label> : <input type="email" name="AdresseMail_Utilisateur" id="AdresseMail_Utilisateur" value="coco@xxx.fr" required/><br/><br/>
     
-    <label for="Mdp">Nouveau mot de passe</label> : <input type="password" name="Mdp" id="Mdp" value="tralala" required/><br/><br/>
+    <label for="Mdp">Nouveau mot de passe</label> : <input type="password" name="Motdepasse" id="Motdepasse" value="tralala" required/><br/><br/>
     <label for="newmdp">Confirmer le mot de passe</label> : <input type="password" name="confmdp" id="confmdp" value="tralala" required/><br/><br/>
     
     </fieldset>

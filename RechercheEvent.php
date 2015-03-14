@@ -25,9 +25,9 @@ include("head.php");
 	
 	
 	
-		<select name="TypeEvent">
+		<select name="Categorie_Evenement">
 
-	
+	<option value="blanc"></option>
 		<option value="Anniversaire">Anniversaire</option>
 
     <option value="Cocktail">Cocktail</option>
@@ -53,7 +53,7 @@ include("head.php");
     
     </select> <br/><br/>
     
-    <label for="datevent">Date à partir de laquelle vous souhaitez rechercher l'évenement </label> : <input type="date" name="datevent" id="date" value="" required/><br/><br/>
+    <label for="Date_Evenement">Date à partir de laquelle vous souhaitez rechercher l'évenement </label> : <input type="Date_Evenement" name="Date_Evenement" id="date" value="2015-14-03"  required/><br/><br/>
     
     </select>
               </fieldset>

@@ -24,7 +24,7 @@ $nbres1=mysql_num_rows($res1);
 if ($nbres1 != 0)
 {
 	echo "1";
-	$req2 = "SELECT * FROM Utilisateur WHERE AdresseMail_Utilisateur = '".$_POST['AdresseMail_Utilisateur']."' AND Mdp = '".$_POST['Mdp']."'";
+	$req2 = "SELECT * FROM Utilisateur WHERE AdresseMail_Utilisateur = '".$_POST['AdresseMail_Utilisateur']."' AND Motdepasse = '".$_POST['Motdepasse']."'";
 	$res2 = mysql_query($req2);
 	$nbres2=mysql_num_rows($res2);
 	
@@ -35,7 +35,7 @@ if ($nbres1 != 0)
 	{
 		echo "123";
 		
-		$_SESSION["AdresseMail_Utilisateur"]=$_POST['AdresseMail_Utilisateur'];
+		$_SESSION['AdresseMail_Utilisateur']=$_POST['AdresseMail_Utilisateur'];
 		
 		
 		$req3= "SELECT Prenom_Utilisateur FROM Utilisateur WHERE AdresseMail_Utilisateur = '".$_POST['AdresseMail_Utilisateur']."'";
@@ -54,10 +54,15 @@ if ($nbres1 != 0)
 		
 	}
 	else{
-		header( 'Location:Connexion.php');
+		$_SESSION['messageConnexion']='Mot de passe erroné';
+		 header( 'Location:Connexion.php');
 		
 		
 	}
+}
+else{ 
+	$_SESSION['messageConnexion']= 'Identifiant erroné';
+	header( 'Location:Connexion.php');
 }
 
 

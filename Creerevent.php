@@ -23,6 +23,8 @@ include("head.php");
 		
 	<label for="Categorie_Evenement">Type d'évènement :</label>
 	<select name="Categorie_Evenement">
+	
+	
 
 	
 		<option value="Anniversaire">Anniversaire</option>
@@ -51,7 +53,7 @@ include("head.php");
     </select> <br/><br/>
 	
 	
-       <label for="datevent">Date </label> : <input type="date" name="Date_Evenement" id="Date_Evenement" value="" required/><br/><br/>
+       <label for="Date_Evenement">Date </label> : <input type="date" name="Date_Evenement" id="Date_Evenement" value="2015-14-03"  required/><br/><br/>
         <br/>
 		<br/>
 		<label for="Description_Evenement">Description Evenement</label>:<textarea name="Description_Evenement" id="Description_Evenement" rows="10" cols="10">
