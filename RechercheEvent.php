@@ -11,7 +11,7 @@ include("head.php");
 ?>
 <div class="row">
 	<div class="col-lg-3"></div>
-	<div class="col-lg-8">
+	
         <h1> Recherche d'évènement</h1>
        
 <form method="post" action="traitementRecherchevent.php">

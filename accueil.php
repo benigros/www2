@@ -3,6 +3,7 @@
 <?php
 include("head.php");
 include("identifiants.php");
+
 ?>
 <body>
 <?php if(isset($_SESSION['AdresseMail_Utilisateur']))

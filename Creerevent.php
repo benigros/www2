@@ -6,6 +6,7 @@ and open the template in the editor.
 -->
 <?php
 include("head.php");
+include("identifiants.php");
 ?>
 
 <div class="row">
@@ -52,13 +53,51 @@ include("head.php");
     
     </select> <br/><br/>
 	
+	<label for="Visibilite">Visibilité de l''évènement :</label>
+	<select name="Visibilite">
 	
-       <label for="Date_Evenement">Date </label> : <input type="date" name="Date_Evenement" id="Date_Evenement" value="2015-14-03"  required/><br/><br/>
+	
+
+	
+		<option value="Public">Public</option>
+		
+		   </select> <br/><br/>
+
+    <label for="Invitation_Evenement">Inviter à l'évènement :</label>
+	<select name="Invitation_Evenement">
+	
+<?php   $r1 = 'SELECT * FROM utilisateur';
+		$res1=mysql_query($r1);
+		echo $res1;
+		while($Tuple=mysql_fetch_array($res1))
+		{
+	?>
+
+		<option value="">
+		<?php 
+		
+		{
+			echo $Tuple['Prenom_Utilisateur'];
+			echo '  ';
+			echo $Tuple['Nom_Utilisateur'] ;
+		}	
+		?>
+		</option>	
+		<?php } ?>
+	
+	
+
+		</select>
+		
+		<br/><br/>
+	
+	
+       <label for="Date_Evenement">Date </label> : <input type="date" name="Date_Evenement" id="Date_Evenement"  required/><br/><br/>
         <br/>
 		<br/>
-		<label for="Description_Evenement">Description Evenement</label>:<textarea name="Description_Evenement" id="Description_Evenement" rows="10" cols="10">
 		
-      
+		
+      <label for="Description_Evenement">Description de l'évènement :</label><br/><textarea name="Description_Evenement" id="Description_Evenement" rows="4" cols="20">
 
        </textarea>      
    

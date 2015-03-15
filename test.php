@@ -2,5 +2,5 @@
 session_start();
 
 
-header('Location:RechercheEvent.php');
+echo $_SESSION['AdresseMailUtilisateur'];
  ?>

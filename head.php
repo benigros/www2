@@ -6,6 +6,7 @@ session_start();
         <meta charset="UTF-8">
           <link href="css/bootstrap.min.css" rel="stylesheet">
 		  <link href="css/mycss.css" rel="stylesheet">
+		  <link href="css/dashboard.css" rel="stylesheet">
         <title></title>
     </head>
     <body>
@@ -57,11 +58,12 @@ session_start();
         <br/>
              
            <header id='header'>
-       <div class="row">
-	<div class="col-lg-3"></div>
+       <div class="row"></div>
+	 <div class="col-lg-1" ></div>
   <div class="col-lg-2" ><a href="http://localhost/Accueil.php"> Accueil</a></div>
   <div class="col-lg-2" > <a href="http://localhost/Creerevent.php">Créer un évènement</a></div>
   <div class="col-lg-2 "> <a href="http://localhost/RechercheEvent.php">Rechercher un évènement</a></div>
+   <div class="col-lg-2" > <a href="http://localhost/Creergroupe.php">Créer un groupe</a></div>
 <div class="col-lg-2"> <a href="http://localhost/RechercheGroupe.php">Rechercher un groupe</a></div>
 
 </div>
@@ -71,7 +73,12 @@ session_start();
 		  
 		   <br/>
 		   <br/>
-		   
+		   <?php 
+		   if(isset($_SESSION['AdresseMail_Utilisateur']))
+		   {
+			   include("profil.php");
+			  }
+	   ?>
 		  
 		  
 		   

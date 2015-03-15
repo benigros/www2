@@ -1,14 +1,15 @@
 <?php
 include("head.php");
+include("identifiants.php");
 ?>
-
+<body>
 <div class="row">
 	<div class="col-lg-3"></div>
 	<div class="col-lg-8">
 	
         <h1> Création de groupe</h1>
         
-        <form method='post' action='traitementcreerevent.php'>
+        <form method='post' action='traitementcreergroupe.php'>
         
         <fieldset>
 		
@@ -22,11 +23,40 @@ include("head.php");
 	
 	
      
-		<label for="Description_Groupe">Description du groupe</label>:<textarea name="Description_Groupe" id="Description_Groupe" rows="10" cols="10">
+		<label for="Description_Groupe">Description du groupe :</label><br/><textarea name="Description_Groupe" id="Description_Groupe" rows="4" cols="20">
 		
       
 
-       </textarea>      
+       </textarea>  
+	   <br/>
+	   <br/>
+
+<label for="Invitation_Groupe">Inviter dans le groupe :</label>
+	<select name="Invitation_Groupe">
+	
+	
+<?php   $r1 = 'SELECT * FROM utilisateur';
+		$res1=mysql_query($r1);
+		echo $res1;
+		while($Tuple=mysql_fetch_array($res1))
+		{
+	?>
+
+		<option value="">
+		<?php 
+		
+		{
+			echo $Tuple['Prenom_Utilisateur'];
+			echo '  ';
+			echo $Tuple['Nom_Utilisateur'] ;
+		}	
+		?>
+		</option>	
+		<?php } ?>
+	
+	
+
+		</select>
    
 
    
@@ -39,9 +69,6 @@ include("head.php");
 </div>
     
     
-        <?php
-        // put your code here
-        ?>
     </form>
     </body>
 	
