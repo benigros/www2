@@ -23,6 +23,7 @@ body {
  */
 .navbar-fixed-top {
   border: 0;
+  background-color:#6B1C39;
 }
 
 /*
@@ -32,6 +33,7 @@ body {
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
+  background-color:black;
 }
 @media (min-width: 768px) {
   .sidebar {
@@ -54,6 +56,7 @@ body {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
   margin-left: -20px;
+ 
 }
 .nav-sidebar > li > a {
   padding-right: 20px;

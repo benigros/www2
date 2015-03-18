@@ -31,28 +31,42 @@ include("identifiants.php");
 	   <br/>
 	   <br/>
 
-<label for="Invitation_Groupe">Inviter dans le groupe :</label>
-	<select name="Invitation_Groupe">
+<label for="Invitation_Groupe">Inviter dans le groupe :</label><br/>
+	<select name="Invitation_Groupe[]" class="form-control" size="10" id="chaqueadresse" multiple="multiple">
 	
 	
-<?php   $r1 = 'SELECT * FROM utilisateur';
-		$res1=mysql_query($r1);
-		echo $res1;
-		while($Tuple=mysql_fetch_array($res1))
-		{
-	?>
-
-		<option value="">
-		<?php 
+<?php   $rqnom = 'SELECT Nom_Utilisateur FROM utilisateur';
+		$rqprenom = 'SELECT Prenom_Utilisateur FROM utilisateur';
+		$rqadresse='SELECT AdresseMail_Utilisateur FROM utilisateur';
 		
-		{
-			echo $Tuple['Prenom_Utilisateur'];
-			echo '  ';
-			echo $Tuple['Nom_Utilisateur'] ;
-		}	
-		?>
-		</option>	
-		<?php } ?>
+		 $nom=mysql_query($rqnom);
+		 $prenom=mysql_query($rqprenom);
+		 $adresse=mysql_query($rqadresse);
+		
+		echo $nom;
+		
+		$nbmembre=mysql_num_rows($nom);
+        $i=0;
+        while ($i<$nbmembre) 
+        {
+            $chaquenom=mysql_result($nom, $i, 'Nom_Utilisateur');
+			$chaqueprenom=mysql_result($prenom, $i, 'Prenom_Utilisateur');
+			$chaqueadresse=mysql_result($adresse, $i,'AdresseMail_Utilisateur');
+			
+            $i++;
+			 
+            echo '<option name="1" value="';
+            echo $chaqueadresse;
+	
+			
+            echo'">';
+            echo $chaqueprenom." ".$chaquenom." ".$chaqueadresse;
+			
+			
+            echo'</option>';
+        }
+        ?>
+   
 	
 	
 

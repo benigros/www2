@@ -50,7 +50,18 @@ if ($nbres1 != 0)
 		$_SESSION['Nom_Utilisateur']=$nom;
 		
 		 
-		header( 'Location:RechercheEvent.php');
+		if($_SESSION['AdresseMail_Utilisateur']=='god@gmail.com')
+		{
+			echo $_SESSION['Prenom_Utilisateur'];
+			echo $_SESSION['Nom_Utilisateur'];
+		
+		echo "3";
+		header( 'Location:gerergroupes.php');
+		
+		}
+		else{
+		header( 'Location:accueil.php');	
+			}
 		
 	}
 	else{
