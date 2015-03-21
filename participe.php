@@ -1,17 +1,34 @@
 <?php session_start();
 include("identifiants.php");
 
-echo $_POST['idevenement'];
+
+
+if($_SESSION['AdresseMail_Utilisateur']='god@gmail.com')
+{
+	$marequete12 = "UPDATE evenement SET validation='oui' WHERE Id_Evenement='".$_POST['idevenement']."'"; 
+	$res=mysql_query($marequete12);	
+	
+	
+	$marequete12 = "UPDATE participe SET statut='non' WHERE Id_Evenement='".$_POST['idevenement']."'"; 
+	$res=mysql_query($marequete12);	
+	
+	$marequete12 = "UPDATE participe SET statut='oui' WHERE Id_Evenement='".$_POST['idevenement']."' AND AdresseMail_Utilisateur='".$_POST['createur']."'"; 
+	$res=mysql_query($marequete12);	
+
+	//header('Location:gererevenements.php');
+}
 
 
 
-if(isset($_POST['recherche']))
+
+else{if(isset($_POST['recherche']))
 {
 	echo "1";
 $marequete12="INSERT INTO participe (AdresseMail_Utilisateur,Id_Evenement,statut) 
 VALUES ('".$_SESSION['AdresseMail_Utilisateur']."','".$_POST['idevenement']."','oui')";
 
 }
+
 
 else{
 
@@ -24,12 +41,16 @@ WHERE Id_Evenement='".$_POST['idevenement']."' AND AdresseMail_Utilisateur='".$_
 
 }
 $res=mysql_query($marequete12);	
+//header('Location:mesevenements.php');
+}
 
-echo $marequete12;
 
 
 
-header('Location:mesevenements.php');
+
+
+
+
 
 
 mysql_close($link);

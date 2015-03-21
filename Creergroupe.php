@@ -60,7 +60,7 @@ include("identifiants.php");
 	
 			
             echo'">';
-            echo $chaqueprenom." ".$chaquenom." ".$chaqueadresse;
+            echo $chaqueprenom." ".$chaquenom;
 			
 			
             echo'</option>';

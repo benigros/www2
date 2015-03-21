@@ -12,22 +12,33 @@ include("identifiants.php");
 	<div class="col-lg-8">
 	
 	
-	 <form method='post' action='traitementinviterevent.php'>
-	<label for="mes_evenements">Mes évènements :</label>
-	<select name="mes_evenements">
+	<?php 
+	
+
+	echo $_SESSION['AdresseMail_Utilisateur'];
+	?>
+	 <form method='post' action='traitementinvitergroupe.php'>
+	<label for="Nom_Groupe">Mes groupes :</label>
+	<select name="Nom_Groupe">
+	
 	
 	<?php 
 	
-	$r1 = "SELECT * FROM evenement where AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."' AND validation='oui'";
+	
+	echo $_SESSION['AdresseMail_Utilisateur'];
+	$r1 = "SELECT * FROM groupe WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."'";
+	
 		$res1=mysql_query($r1);
-		while($Tuple=mysql_fetch_array($res1))
+		
+		while($Tab=mysql_fetch_array($res1))
 		{
+			
 	?>
-	<option value="<?php echo $Tuple['Nom_Evenement'];?>">
+	<option value="<?php echo $Tab['Nom_Groupe'];?>">
 		<?php 
 		
 		
-			echo $Tuple['Nom_Evenement'];
+			echo $Tab['Nom_Groupe'];
 			
 	
 		?>
@@ -37,15 +48,11 @@ include("identifiants.php");
 
     
 	<br/>
-	<label for="Invitation_Evenement">Inviter à l'évènement :</label><br/>
-	<select name="Invitation_Evenement[]" class="form-control" size="10" id="chaqueadresse" multiple="multiple">
+	<label for="Invitation_Groupe">Inviter dans le groupe :</label><br/>
+	<select name="Invitation_Groupe[]" class="form-control" size="10" id="chaqueadresse" multiple="multiple">
 	
 	
-<?php    
-			
-
-
-$rqnom = 'SELECT Nom_Utilisateur FROM utilisateur';
+<?php   $rqnom = 'SELECT Nom_Utilisateur FROM utilisateur';
 		$rqprenom = 'SELECT Prenom_Utilisateur FROM utilisateur';
 		$rqadresse='SELECT AdresseMail_Utilisateur FROM utilisateur';
 		

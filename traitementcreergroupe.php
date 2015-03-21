@@ -10,10 +10,12 @@ echo $_POST['Nom_Groupe'];
 $marequete12 = "INSERT  INTO groupe (AdresseMail_Utilisateur,Nom_Groupe,Description_Groupe) 
 			 VALUES ('".$_SESSION['AdresseMail_Utilisateur']."', '".$_POST['Nom_Groupe']."','".$_POST['Description_Groupe']."')";
 
-			 
+echo $marequete12;
+			  $res12=mysql_query($marequete12);	
+
 $marequete14="INSERT INTO appartient (AdresseMail_Utilisateur,Nom_Groupe,statut) VALUES ('".$_SESSION['AdresseMail_Utilisateur']."','".$_POST['Nom_Groupe']."','oui')";
-			 
-echo $marequete14;
+			  $res14=mysql_query($marequete14);	
+
 			 
 $i=0;
 while (list($id_membre,$chaqueadresse)=each($_POST['Invitation_Groupe']))
@@ -36,13 +38,12 @@ $i++;
 
 
 			 
- $res12=mysql_query($marequete12);	
- $res14=mysql_query($marequete14);	
+
 
 
 	 
 
-//header('Location:RechercheGroupe.php');
+header('Location:RechercheGroupe.php');
 
 
 mysql_close($link);

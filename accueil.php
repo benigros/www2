@@ -35,32 +35,32 @@ if(isset($_SESSION['accueil']))
 	AND Categorie_Evenement = '".$_SESSION['Categorie_Evenement']."'
 	AND Date_Evenement >= '".$_SESSION['Date_Evenement']."' 
 	AND (Nom_Groupe IN (SELECT Nom_Groupe FROM appartient 
-	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public'))";
+	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public')) validation='oui'";
 	}
 	if ($_SESSION['accueil']==2)
 	{
 	$requete13="SELECT * FROM evenement WHERE Nom_Evenement = '".$_SESSION['Nom_Evenement']."'
 	AND Date_Evenement >= '".$_SESSION['Date_Evenement']."'
     AND (Nom_Groupe IN (SELECT Nom_Groupe FROM appartient 
-	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public'))";
+	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public')) validation='oui'";
 	}
 	if ($_SESSION['accueil']==3)
 	{
 	$requete13="SELECT * FROM evenement WHERE Categorie_Evenement = '".$_SESSION['Categorie_Evenement']."'
 	AND Date_Evenement >= '".$_SESSION['Date_Evenement']."'
 	AND (Nom_Groupe IN (SELECT Nom_Groupe FROM appartient 
-	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public'))";
+	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public')) validation='oui'";
 	
 	}
 	if ($_SESSION['accueil']==4)
 	{
 	$requete13="SELECT * FROM evenement WHERE Date_Evenement >= '".$_SESSION['Date_Evenement']."'
 	AND (Nom_Groupe IN (SELECT Nom_Groupe FROM appartient 
-	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public')) ";
+	WHERE AdresseMail_Utilisateur='".$_SESSION['AdresseMail_Utilisateur']."')OR (Nom_Groupe='Public'))validation='oui' ";
 	}
 }
 else {
-	$requete13="SELECT * FROM evenement where Nom_Groupe='Public' ";
+	$requete13="SELECT * FROM evenement where Nom_Groupe='Public' AND validation='oui' ";
 	
 }
 
@@ -126,14 +126,19 @@ if($Tuple['Categorie_Evenement']=='Fête')
 
 	echo $Tuple['Description_Evenement'];
 	echo"<br/>";
+
 	echo "_____________________________________________________________________________";
+	
+	 if(isset($_SESSION['AdresseMail_Utilisateur'])) 
+	 {
  ?>
 <form method='post' name="button2" action='participe.php'>
 				  <input type="hidden" name="recherche" value="2">
 				  <input type="hidden" name="idevenement" value="<?php		echo $Tuple['Id_Evenement'];	?>">
-				  <input class="btn btn-lg btn-primary"  name="button2" id="button2" type="submit" value="Participer à l'évènement"> </button></form>
+			<input class="btn btn-lg btn-primary"  name="button2" id="button2" type="submit" value="Participer à l'évènement"> </button></form> 
  </fieldset>
  <?php
+	 }
 }
  ?>
 </div>

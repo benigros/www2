@@ -54,10 +54,10 @@ include("identifiants.php");
                  <td></td>
                   <td></td><td></td><td></td><td></td><td></td>
                   <td><form method='post' name="button1" action='participe.php'>
-				  <input type="hidden" name="idevenement" value="<?php	echo $Tuple2['Nom_Evenement'];		?>">
+				  <input type="hidden" name="nomevenement" value="<?php	echo $Tuple2['Nom_Evenement'];		?>">
 				  <input class="btn btn-lg btn-primary"  name="button2" id="button2" type="submit" value="Rejoindre"> </button></form></td>
 				  
-				  <td><form method='post' name="button1" action='quitterevenement.php'><input type="hidden" name="idevenement" value="<?php		echo $Tuple2['Nom_Evenement'];	?>">
+				  <td><form method='post' name="button1" action='quitterevenement.php'><input type="hidden" name="nomevenement" value="<?php		echo $Tuple2['Nom_Evenement'];	?>">
 				  <input class="btn btn-lg btn-primary"  name="button1" id="button1" type="submit" value="Refuser"> </button></form></td>
                 </tr>
 		

@@ -29,6 +29,10 @@ session_start();
           <ul class="nav navbar-nav navbar-left">
              <li ><a href="accueil.php">Accueil</a></li>
 			 
+			 			<?php
+	if(isset($_SESSION['AdresseMail_Utilisateur']))
+	{?>
+			 
                 <li ><a href="Creerevent.php">Créer un évènement</a></li>
 				
                 <li><a href="RechercheEvent.php">Rechercher un évènement</a></li>
@@ -38,9 +42,7 @@ session_start();
                 <li><a href="RechercheGroupe.php">Rechercher un groupe</a></li>
 				<li><div class="col-lg-2"></div></li>
 				<li>
-				<?php
-	if(isset($_SESSION['AdresseMail_Utilisateur']))
-	{?>
+	
 
       Connecté en tant que <?php  echo $_SESSION['Prenom_Utilisateur']." ".$_SESSION['Nom_Utilisateur'] ;?>
 	
@@ -58,7 +60,17 @@ session_start();
 	else{
 		?>
 		
-		
+		<li >_________________________</li>
+				
+<li >_________________________</li>
+				
+                <li >_________________________</li>
+			
+                <li >_________________________</li>
+				<li><div class="col-lg-2"></div></li>
+				<li>
+
+		  
 		
        <form method='post' action='Connexion.php'>
 	  <input type="submit" value="Connexion" />
@@ -72,6 +84,8 @@ session_start();
 	  <input type="submit" value="Inscription" />
 	  </form>
 	</div>
+	
+
 	<?php
 	}
 	?></li>
@@ -95,10 +109,12 @@ session_start();
 			</li><li>
 			<a href="mesgroupes.php">
 			Mes groupes </a> <span class="sr-only">(current)</span></a></li>
-            <li><a href="inviterevent.php">Inviter des personnes à mes évènements </a></li>
+			  <li><a href="invitergroupe.php">Inviter des personnes à mes groupes </a></li>
+            
+			 
             <li><a href="mesevenements.php">Mes évènements  </a></li>
-			
-			  <li> <a href="">Modifier mon mot de passe </a> </li>
+			<li><a href="inviterevent.php">Inviter des personnes à mes évènements </a></li>
+			  <li> <a href="changepass.php">Modifier mon mot de passe </a> </li>
 			 
 			
            
