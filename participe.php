@@ -3,7 +3,7 @@ include("identifiants.php");
 
 
 
-if($_SESSION['AdresseMail_Utilisateur']='god@gmail.com')
+if($_SESSION['AdresseMail_Utilisateur']=='god@gmail.com')
 {
 	$marequete12 = "UPDATE evenement SET validation='oui' WHERE Id_Evenement='".$_POST['idevenement']."'"; 
 	$res=mysql_query($marequete12);	
